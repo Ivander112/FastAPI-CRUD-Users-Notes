@@ -1,0 +1,37 @@
+Metadata-Version: 2.1
+Name: eqassertions
+Version: 0.4
+Summary: assertions in __eq__methods
+Home-page: https://github.com/aodag/eqassertions
+Author: Atsushi Odagiri
+Author-email: aodagx@gmail.com
+License: MIT
+Platform: UNKNOWN
+Provides-Extra: dev
+Requires-Dist: build ; extra == 'dev'
+Requires-Dist: nox ; extra == 'dev'
+Requires-Dist: flake8 ; extra == 'dev'
+Provides-Extra: testing
+Requires-Dist: pytest ; extra == 'testing'
+Requires-Dist: pytest-cov ; extra == 'testing'
+Requires-Dist: pytest-randomly ; extra == 'testing'
+
+==================
+eqassertion
+==================
+
+assertions in `__eq__` methods.
+
+>>> from eqassertions import Any, NotNone, IsA, IsTrue, Match
+>>> data = {"a": 1, "b": 2}
+>>> assert {"a": 1, "b": Any()}
+>>> assert {"a": 1, "b": NotNone()}
+>>> assert {"a": 1, "b": IsA(int)}
+>>> assert {"a": 1, "b": IsTrue()}
+>>> assert v == {"a": 1, "b": Match(r"\d")}
+>>> assert v == {"a": 1, "b": Match(r"[a-z]")}
+Traceback (most recent call last):
+ ...
+AssertionError
+
+
