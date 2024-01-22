@@ -13,17 +13,6 @@ from api.base.base_schemas import PaginationMetaResponse, PaginationParams
 from models.note import Note, NoteSchema
 from .schemas import CreateNoteRequest, UpdateNoteRequest
 
-# async def get_sorted_notes_from_database(session: Session):
-#     async with session.begin():
-#         sorted_notes = session.execute(select(Note).order_by(desc(Note.note_id)))
-#         sorted_notes = sorted_notes.scalars().all()
-
-#         # Print note IDs for debugging purposes
-#         for note in sorted_notes:
-#             print(f"Note ID: {note.note_id}")
-
-#         return sorted_notes
-
 
 AsyncSession = Annotated[async_sessionmaker, Depends(get_session)]
 

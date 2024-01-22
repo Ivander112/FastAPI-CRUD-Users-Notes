@@ -20,8 +20,9 @@ class ReadNoteResponse(BaseResponse):
 # Get all note
 
 class NotePaginationResponse(BaseModel):
-    records: list[NoteSchema]
     meta: PaginationMetaResponse
+    records: list[NoteSchema]
+
 
 class ReadAllNoteResponse(BaseResponse):
     data: NotePaginationResponse
