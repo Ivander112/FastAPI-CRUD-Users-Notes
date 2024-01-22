@@ -56,7 +56,6 @@ class ReadAllNote:
     def __init__(self, session: AsyncSession) -> None:
         self.async_session = session
 
-    
     async def execute(
         self,
         user_id: int,
@@ -105,10 +104,10 @@ class ReadNote:
     def __init__(self, session: AsyncSession) -> None:
         self.async_session = session
 
-    async def execute(self, note_id: int) -> NoteSchema:
+    async def execute(self, note_id: int,user_id: int) -> NoteSchema:
         async with self.async_session() as session:
             query = select(Note).where(
-                (Note.note_id == note_id).__and__(Note.deleted_at == None)
+                (Note.note_id == note_id).__and__(Note.deleted_at == None).__and__(Note.created_by == user_id)
             )
             
             note = await session.execute(query)

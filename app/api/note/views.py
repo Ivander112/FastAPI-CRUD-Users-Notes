@@ -85,10 +85,11 @@ async def read(
     request: Request,
     response: Response,
     note_id: int,
+    user_id: int = Depends(get_user_id_from_access_token),
     update_note: ReadNote = Depends(ReadNote),
 ) -> ReadNoteResponse:
     try:
-        resp_data = await update_note.execute(note_id=note_id)
+        resp_data = await update_note.execute(note_id=note_id,user_id=user_id)
 
         return ReadNoteResponse(
             status="success",
