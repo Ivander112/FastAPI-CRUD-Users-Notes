@@ -106,8 +106,8 @@ http://127.0.0.1:8000/api/v1/notes/add
         
     ```
         {
-            "title": "",
-            "content": ""
+            "title": "test-APi",
+            "content": "test-New"
         }
     ```
     
@@ -137,14 +137,7 @@ http://127.0.0.1:8000/api/v1/notes/add
               "status": "success"
           }
     ```
-Body
 
-```json
-{
-  "title": "deleted_gang",
-  "content": "deleted_rules"
-}
-```
 
 ### Get All Note (Pagination)
 
@@ -165,46 +158,21 @@ This endpoint makes an HTTP GET request to retrieve notes. It accepts query para
 
 The response will have JSON object with the `data`, `message`, and `status` fields. The `data` object contains `meta` information and an array of `records` representing the notes. Each record includes details such as content, title, creation and update timestamps, and user IDs.
 
-Example Response:
+Example Input:
 
-```json
-{
-    "data": {
-        "meta": {
-            "item_per_page": 0,
-            "page": 0,
-            "total_item": 0,
-            "total_page": 0
-        },
-        "records": [
-            {
-                "content": "",
-                "created_at": "",
-                "created_by": 0,
-                "deleted_at": null,
-                "deleted_by": null,
-                "note_id": 0,
-                "title": "",
-                "updated_at": "",
-                "updated_by": 0
-            }
-        ]
-    },
-    "message": "",
-    "status": ""
-}
-```
+http://localhost:8000/api/v1/notes/?page=1&item_per_page=5&filter_by_user_id=true
+
 Query Params
 
-page  2
+page  1
 
-item_per_page   1
+item_per_page   5
 
-filter_by_user_id   false
+filter_by_user_id   true
 
 ### Get one note
 
-http://127.0.0.1:8000/api/v1/notes/49
+http://127.0.0.1:8000/api/v1/notes/34
 
 This endpoint makes an HTTP GET request to retrieve the details of a specific note. The request should include the note ID in the URL path.
 
@@ -213,10 +181,21 @@ No request body is required for this endpoint.
 Example response
 
 ```json
-{
-  "title": "Updated Title",
-  "content": "Updated Content"
-}
+        {
+          "status": "success",
+          "message": "success read note",
+          "data": {
+              "note_id": 34,
+              "title": "Fast Note",
+              "content": "Fast content",
+              "created_at": "2024-01-20T07:14:00.982207",
+              "created_by": 1,
+              "updated_at": null,
+              "updated_by": null,
+              "deleted_at": null,
+              "deleted_by": null
+          }
+        }
 ```
 
 ### Update Note
@@ -267,15 +246,6 @@ JSON
   "status": "success"
 }
 ```
-Body raw  (json)
-
-```json
-{
-    "title": "Deleted fast",
-    "content": "Deleted content"
-}
-```
-
 
 ### Delete Note
 
