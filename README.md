@@ -72,7 +72,7 @@ You can now access [localhost:8000/docs](http://localhost:8000/docs) to see the 
 ```
 
 
-## CRUD API Notes
+# CRUD API Notes
 
 Adding a method for notes endpoint with function:
 
@@ -86,13 +86,10 @@ Adding a method for notes endpoint with function:
     
 -   Delete Notes (set deleted_at and Deleted By)
 
-### Add note
-
-# Add Note
+## Add Note
 
 http://127.0.0.1:8000/api/v1/notes/add
 
-## Request
 
 ### Request URL
 
