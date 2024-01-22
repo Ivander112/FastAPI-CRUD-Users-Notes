@@ -121,21 +121,21 @@ http://127.0.0.1:8000/api/v1/notes/add
     JSON
     
     ```json
-         {
-            "data": {
-                "content": "",
-                "created_at": "",
-                "created_by": 0,
-                "deleted_at": null,
-                "deleted_by": null,
-                "note_id": 0,
-                "title": "",
-                "updated_at": null,
-                "updated_by": null
-            },
-            "message": "",
-            "status": ""
-        }
+          {
+              "data": {
+                  "content": "test-New",
+                  "created_at": "Mon, 22 Jan 2024 15:23:21 GMT",
+                  "created_by": 3,
+                  "deleted_at": null,
+                  "deleted_by": null,
+                  "note_id": 64,
+                  "title": "test-APi",
+                  "updated_at": null,
+                  "updated_by": null
+              },
+              "message": "success add new note",
+              "status": "success"
+          }
     ```
 Body
 
