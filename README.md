@@ -84,7 +84,7 @@ Adding a method for notes endpoint with function:
     
 -   Update existing note
     
--   Delete Notes (set deleted_at and Deleted By)
+-   Delete Notes (set deleted_at and deleted_By)
 
 ## Add Note
 
@@ -98,18 +98,18 @@ http://127.0.0.1:8000/api/v1/notes/add
 -   URL: `http://127.0.0.1:8000/api/v1/notes/add`
     
 
-### Request Body
+### Example Request Body
 
         
     ```
-        {
-            "title": "test-APi",
-            "content": "test-New"
-        }
+      {
+          "title": "test-APi",
+          "content": "test-New"
+      }
     ```
     
 
-## Response
+## Example Response
 
 -   Status: 200 OK
     
@@ -203,7 +203,7 @@ http://127.0.0.1:8000/api/v1/notes/49
 
 This endpoint allows the user to update a specific note by sending an HTTP PUT request to the specified URL.
 
-### Request Body
+### Example Request Body
 
 -   The request should include a raw JSON payload in the request body with the following parameters:
     
@@ -224,7 +224,6 @@ Example Input:
   
   Example Response:
 
-JSON
 
 ```json
 {
